@@ -77,7 +77,7 @@ public class Preguntas extends AppCompatActivity {
                 }
         }
     }
-    public void contadorAciertos(int aciertos){
+    public void contadorAciertos(int  aciertos){
         System.out.println(aciertos);
         if(aciertos==15){
             victoria(this);
