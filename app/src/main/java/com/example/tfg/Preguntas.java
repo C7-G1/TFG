@@ -27,7 +27,6 @@ public class Preguntas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preguntas);
-        foto=(ImageView)findViewById(R.id.imgFoto);
         botonA=(Button)findViewById(R.id.btA);
         botonB=(Button)findViewById(R.id.btB);
         botonC=(Button)findViewById(R.id.btC);
