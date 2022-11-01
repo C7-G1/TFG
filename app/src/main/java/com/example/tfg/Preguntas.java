@@ -41,40 +41,8 @@ public class Preguntas extends AppCompatActivity {
         int op=azar.nextInt(2)+1;
         int puntos=0;
 
-        switch (op){
-            case 1:
-                ImageView img1=new ImageView(this); img1.setBackgroundResource(R.drawable.ironman);
-                foto=img1;
-                botonA.setText("Iron Man");
-                botonB.setText("Spider-Man");
-                botonC.setText("Thor");
-                botonD.setText("Ojo de Halcón");
-                String respuesta1= (String) botonA.getText();
-                if (respuesta1==respuesta1){
-                    aciertos=puntos+1;
-                    contadorAciertos(aciertos);
 
-                }else{
-                    contadorVidas(vidas);
-                }
 
-                break;
-            case 2:
-                ImageView img2=new ImageView(this); img2.setBackgroundResource(R.drawable.blackcat);
-                foto=img2;
-                botonA.setText("Bruja Escarlata");
-                botonB.setText("Catwoman");
-                botonC.setText("Black Cat");
-                botonD.setText("Mary Jane");
-                String respuesta2= (String) botonC.getText();
-                if (respuesta2==respuesta2){
-                    aciertos=puntos+1;
-                    contadorAciertos(aciertos);
-
-                }else{
-                    contadorVidas(vidas);
-                }
-        }
     }
     public void contadorAciertos(int  aciertos){
         System.out.println(aciertos);
