@@ -3,6 +3,7 @@ package com.example.tfg;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
@@ -37,13 +38,15 @@ crearBD preguntasBD;
         bd.execSQL("INSERT INTO preguntas VALUES(15, '¿De que tipo de Pampour?', 'Hielo','Agua','Fantasma','Planta','Agua', 'Pokemon');");
 
     }
-    public void listaTemas(View v){
-
-    }
 
     public void pantallaPreguntas(View v){
         Intent i=new Intent(this,Preguntas.class);
         startActivity(i);
+    }
+    public void datos(){
+        SQLiteDatabase bd;
+        bd=preguntasBD.getReadableDatabase();
+        Cursor contenido = bd.rawQuery("select * from preguntas ", null);
     }
         }
 

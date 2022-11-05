@@ -15,7 +15,6 @@ import java.util.Random;
 
 public class Preguntas extends AppCompatActivity {
 
-    ImageView foto;
     Button botonA;
     Button botonB;
     Button botonC;
