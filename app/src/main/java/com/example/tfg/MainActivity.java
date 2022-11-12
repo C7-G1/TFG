@@ -37,17 +37,21 @@ crearBD preguntasBD;
         bd.execSQL("INSERT INTO preguntas VALUES(14, '¿De que tipo de Pansage?', 'Hielo','Agua','Fantasma','Planta','Planta', 'Pokemon');");
         bd.execSQL("INSERT INTO preguntas VALUES(15, '¿De que tipo de Pampour?', 'Hielo','Agua','Fantasma','Planta','Agua', 'Pokemon');");
 
+
+
+
+
+
+        preguntasBD.close();
     }
 
     public void pantallaPreguntas(View v){
         Intent i=new Intent(this,Preguntas.class);
+        ge
         startActivity(i);
+
     }
-    public void datos(){
-        SQLiteDatabase bd;
-        bd=preguntasBD.getReadableDatabase();
-        Cursor contenido = bd.rawQuery("select * from preguntas ", null);
-    }
+
         }
 
 
