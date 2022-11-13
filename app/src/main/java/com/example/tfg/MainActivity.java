@@ -3,21 +3,21 @@ package com.example.tfg;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-Button empezar;
+Button pokemon;
+Button marvel;
 crearBD preguntasBD;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        empezar=findViewById(R.id.btEmpezar);
+        pokemon=(Button) findViewById(R.id.btPokemon);
+        marvel=(Button) findViewById(R.id.btMarvel);
         preguntasBD = new crearBD(this);
         SQLiteDatabase bd;
         bd=preguntasBD.getWritableDatabase();
@@ -46,8 +46,17 @@ crearBD preguntasBD;
     }
 
     public void pantallaPreguntas(View v){
+        String tematica;
         Intent i=new Intent(this,Preguntas.class);
-        ge
+
+        if(pokemon.isClickable()){
+            tematica=pokemon.getText().toString();
+            i.putExtra("Pokemon",tematica);
+        }
+        if(marvel.isClickable()){
+            tematica=marvel.getText().toString();
+            i.putExtra("Marvel",tematica);
+        }
         startActivity(i);
 
     }

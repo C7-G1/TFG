@@ -1,8 +1,11 @@
 package com.example.tfg;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.media.Image;
@@ -13,6 +16,11 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 import java.util.Random;
 
 public class Preguntas extends AppCompatActivity {
@@ -24,6 +32,9 @@ public class Preguntas extends AppCompatActivity {
     int vidas=3;
     int aciertos=0;
     crearBD preguntasBD;
+    Intent i=getIntent();
+    String tematica;
+    Cursor contenido;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,8 +43,37 @@ public class Preguntas extends AppCompatActivity {
         botonB=(Button)findViewById(R.id.btB);
         botonC=(Button)findViewById(R.id.btC);
         botonD=(Button)findViewById(R.id.btD);
+        crearLista();
 
 
+    }
+
+
+    public void datos(){
+
+        if(tematica.equals(i.getStringExtra("Pokemon"))){
+            preguntasBD = new crearBD(this);
+            SQLiteDatabase bd;
+            bd=preguntasBD.getReadableDatabase();
+             contenido = bd.rawQuery("select * from preguntas where tematica='" + tematica + "';", null);
+        }
+
+        if(tematica.equals(i.getStringExtra("Marvel"))) {
+            preguntasBD = new crearBD(this);
+            SQLiteDatabase bd;
+            bd = preguntasBD.getReadableDatabase();
+             contenido = bd.rawQuery("select * from preguntas where tematica='" + tematica + "';", null);
+        }
+        List<Object>listaPreguntas=new ArrayList<Object>();
+            ListaPreguntas lp=new ListaPreguntas(contenido.getInt(1),contenido.getString(2),contenido.getString(3),contenido.getString(4),contenido.getString(5),contenido.getString(6),
+                    contenido.getString(7),contenido.getString(8));
+
+
+
+
+    }
+
+    public static void crearLista(){
 
     }
 
@@ -68,10 +108,5 @@ public class Preguntas extends AppCompatActivity {
         t.show();
     }
 
-    public void datos(){
-        preguntasBD = new crearBD(this);
-        SQLiteDatabase bd;
-        bd=preguntasBD.getReadableDatabase();
-        Cursor contenido = bd.rawQuery("select * from preguntas where tematica='" + cod + "';", null);
-    }
+
 }

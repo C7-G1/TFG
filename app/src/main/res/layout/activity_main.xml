@@ -20,6 +20,21 @@
         app:srcCompat="@drawable/fondo2" />
 
     <TextView
+        android:id="@+id/tvTitulo2"
+        android:layout_width="212dp"
+        android:layout_height="32dp"
+        android:fontFamily="@font/videogame_regular"
+        android:text="Elige un tema"
+        android:textAlignment="textStart"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.396" />
+
+    <TextView
         android:id="@+id/tvTitulo"
         android:layout_width="247dp"
         android:layout_height="71dp"
@@ -33,20 +48,34 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.254" />
+        app:layout_constraintVertical_bias="0.168" />
 
     <Button
-        android:id="@+id/btEmpezar"
+        android:id="@+id/btPokemon"
         android:layout_width="190dp"
         android:layout_height="55dp"
         android:backgroundTint="#889C90"
         android:onClick="pantallaPreguntas"
-        android:text="Empezar"
+        android:text="Pokemon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.072"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.778" />
+        app:layout_constraintVertical_bias="0.668" />
+
+    <Button
+        android:id="@+id/btMarvel"
+        android:layout_width="190dp"
+        android:layout_height="55dp"
+        android:backgroundTint="#889C90"
+        android:onClick="pantallaPreguntas"
+        android:text="Marvel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.072"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.877" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
