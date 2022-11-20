@@ -49,7 +49,7 @@ public class Preguntas extends AppCompatActivity {
     }
 
 
-    public void datos(){
+    public List datos(){
 
         if(tematica.equals(i.getStringExtra("Pokemon"))){
             preguntasBD = new crearBD(this);
@@ -67,14 +67,16 @@ public class Preguntas extends AppCompatActivity {
         List<Object>listaPreguntas=new ArrayList<Object>();
             ListaPreguntas lp=new ListaPreguntas(contenido.getInt(1),contenido.getString(2),contenido.getString(3),contenido.getString(4),contenido.getString(5),contenido.getString(6),
                     contenido.getString(7),contenido.getString(8));
-
-
-
-
+            for(int z=0;contenido.moveToNext();z++ ) {
+                listaPreguntas.add(lp);
+            }
+        return listaPreguntas;
     }
 
-    public static void crearLista(){
-
+    public void ponerPreguntas(List listaPreguntas){
+        for(int i=0;i<listaPreguntas.size();i++){
+          botonA=botonA.setText(listaPreguntas.get());
+        }
     }
 
     public void preguntas(View v){
