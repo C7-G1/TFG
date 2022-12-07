@@ -55,7 +55,7 @@
         android:layout_width="190dp"
         android:layout_height="55dp"
         android:backgroundTint="#889C90"
-        android:onClick="pantallaPreguntas"
+        android:onClick="preguntasPokemon"
         android:text="Pokemon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
