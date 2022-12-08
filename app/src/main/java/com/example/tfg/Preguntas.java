@@ -30,7 +30,6 @@ public class Preguntas extends AppCompatActivity {
     Button botonB;
     Button botonC;
     Button botonD;
-    int vidas=3;
     int aciertos=0;
     crearBD preguntasBD;
     Intent i=getIntent();
