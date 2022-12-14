@@ -7,13 +7,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-Button pokemon;
-Button marvel;
-crearBD preguntasBD;
-SQLiteDatabase bd;
+    Button pokemon;
+    Button marvel;
+    crearBD preguntasBD;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +21,7 @@ SQLiteDatabase bd;
         marvel=(Button) findViewById(R.id.btMarvel);
         preguntasBD = new crearBD(this);
 
+        SQLiteDatabase bd;
         bd=preguntasBD.getWritableDatabase();
 
         //Pokemon
@@ -40,57 +40,48 @@ SQLiteDatabase bd;
         bd.execSQL("INSERT INTO preguntas VALUES(13, '¿De que tipo de Panshear?', 'Hielo','Agua','Fuego','Planta','Fuego', 'Pokemon');");
         bd.execSQL("INSERT INTO preguntas VALUES(14, '¿De que tipo de Pansage?', 'Hielo','Agua','Fantasma','Planta','Planta', 'Pokemon');");
         bd.execSQL("INSERT INTO preguntas VALUES(15, '¿De que tipo de Pampour?', 'Hielo','Agua','Fantasma','Planta','Agua', 'Pokemon');");
-        if(bd !=null){
-            Toast.makeText(MainActivity.this,"BASE DE DATOS CREADA",Toast.LENGTH_LONG);
-        }else{
-            Toast.makeText(MainActivity.this,"ERROR",Toast.LENGTH_LONG);
-        }
+
         //Marvel
-        //bd.execSQL("INSERT INTO preguntas VALUES(1, '¿Quien es el director de SHIELD?', 'Viuda Negra','Tony Stark','Phill Couson','Nick Furia','Nick Furia', 'Marvel');");
-        //bd.execSQL("INSERT INTO preguntas VALUES(2, '¿Quien es el director de SHIELD?', 'Viuda Negra','Tony Stark','Phill Couson','Nick Furia','Nick Furia', 'Marvel');");
-        //bd.execSQL("INSERT INTO preguntas VALUES(3, '¿Quien es Iron Man?', 'Viuda Negra','Tony Stark','Phill Couson','Nick Furia','Tony Stark', 'Marvel');");
-        //bd.execSQL("INSERT INTO preguntas VALUES(4, '¿Quien es Natasha Romanoff?', 'Viuda Negra','Kate Bishop','Spider-Gwen','She-Hulk','Viuda Negra', 'Marvel');");
-        //bd.execSQL("INSERT INTO preguntas VALUES(5, '¿Quien es Peter Parker?', 'Spider-Man','Ojo Halcon','Thor','Loki','Spider-Man', 'Marvel');");
-        //bd.execSQL("INSERT INTO preguntas VALUES(6, '¿Quien dios es Loki?', 'Dios del trueno','Dios de la sabiduria','Dios del engaño','Dios de la muerte','Dios del engaño', 'Marvel');");
-        //bd.execSQL("INSERT INTO preguntas VALUES(7, '¿Quien dios es Thor?', 'Dios del trueno','Dios de la sabiduria','Dios del engaño','Dios de la muerte','Dios del trueno', 'Marvel');");
-        //bd.execSQL("INSERT INTO preguntas VALUES(8, '¿Que animal es Rocket?', 'Gato','Perro','Pez','Mapache','Mapache', 'Marvel');");
-        //bd.execSQL("INSERT INTO preguntas VALUES(9, '¿Que animal es Cosmo?', 'Gato','Perro','Pez','Mapache','Perro', 'Marvel');");
-        //bd.execSQL("INSERT INTO preguntas VALUES(10, '¿Quien es Hulk?', 'Bruce Banner','Tony Stark','Mary Jane','Loki','Bruce Banner', 'Marvel');");
-        //bd.execSQL("INSERT INTO preguntas VALUES(11, '¿Quien es Black Cat?', 'Mary Jane','Gwen Staisy','Felicia Hardy','Harley Quinn','Felicia Hardy', 'Marvel');");
-        //bd.execSQL("INSERT INTO preguntas VALUES(12, '¿Que es Venom?', 'Una persona','El amigo de Spider-Man','Un simbionte','El padre de Spider-Man','Un simbionte', 'Marvel');");
-        //bd.execSQL("INSERT INTO preguntas VALUES(13, '¿Quien es el Duende Verde?', 'Harry Osborn','Dende','Norman Osborn','Otto Octavius','Norman Osborn', 'Marvel');");
-        //bd.execSQL("INSERT INTO preguntas VALUES(14, '¿Quien es el Profesor Octopus?', 'Harry Osborn','Dende','Norman Osborn','Otto Octavius','Otto Octavius', 'Marvel');");
-        //bd.execSQL("INSERT INTO preguntas VALUES(15, '¿Que guerra combatio el Capitan America?', 'Primera Guerra Mundial','Segunda Guerra Mundial','Guerra Fria','Guerra Civil Española','Segunda Guerra Mundial', 'Marvel');");
-        System.out.println("asdfsdfgdfsgf");
+        bd.execSQL("INSERT INTO preguntas VALUES(1, '¿Quien es el director de SHIELD?', 'Viuda Negra','Tony Stark','Phill Couson','Nick Furia','Nick Furia', 'Marvel');");
+        bd.execSQL("INSERT INTO preguntas VALUES(2, '¿Quien es el director de SHIELD?', 'Viuda Negra','Tony Stark','Phill Couson','Nick Furia','Nick Furia', 'Marvel');");
+        bd.execSQL("INSERT INTO preguntas VALUES(3, '¿Quien es Iron Man?', 'Viuda Negra','Tony Stark','Phill Couson','Nick Furia','Tony Stark', 'Marvel');");
+        bd.execSQL("INSERT INTO preguntas VALUES(4, '¿Quien es Natasha Romanoff?', 'Viuda Negra','Kate Bishop','Spider-Gwen','She-Hulk','Viuda Negra', 'Marvel');");
+        bd.execSQL("INSERT INTO preguntas VALUES(5, '¿Quien es Peter Parker?', 'Spider-Man','Ojo Halcon','Thor','Loki','Spider-Man', 'Marvel');");
+        bd.execSQL("INSERT INTO preguntas VALUES(6, '¿Quien dios es Loki?', 'Dios del trueno','Dios de la sabiduria','Dios del engaño','Dios de la muerte','Dios del engaño', 'Marvel');");
+        bd.execSQL("INSERT INTO preguntas VALUES(7, '¿Quien dios es Thor?', 'Dios del trueno','Dios de la sabiduria','Dios del engaño','Dios de la muerte','Dios del trueno', 'Marvel');");
+        bd.execSQL("INSERT INTO preguntas VALUES(8, '¿Que animal es Rocket?', 'Gato','Perro','Pez','Mapache','Mapache', 'Marvel');");
+        bd.execSQL("INSERT INTO preguntas VALUES(9, '¿Que animal es Cosmo?', 'Gato','Perro','Pez','Mapache','Perro', 'Marvel');");
+        bd.execSQL("INSERT INTO preguntas VALUES(10, '¿Quien es Hulk?', 'Bruce Banner','Tony Stark','Mary Jane','Loki','Bruce Banner', 'Marvel');");
+        bd.execSQL("INSERT INTO preguntas VALUES(11, '¿Quien es Black Cat?', 'Mary Jane','Gwen Staisy','Felicia Hardy','Harley Quinn','Felicia Hardy', 'Marvel');");
+        bd.execSQL("INSERT INTO preguntas VALUES(12, '¿Que es Venom?', 'Una persona','El amigo de Spider-Man','Un simbionte','El padre de Spider-Man','Un simbionte', 'Marvel');");
+        bd.execSQL("INSERT INTO preguntas VALUES(13, '¿Quien es el Duende Verde?', 'Harry Osborn','Dende','Norman Osborn','Otto Octavius','Norman Osborn', 'Marvel');");
+        bd.execSQL("INSERT INTO preguntas VALUES(14, '¿Quien es el Profesor Octopus?', 'Harry Osborn','Dende','Norman Osborn','Otto Octavius','Otto Octavius', 'Marvel');");
+        bd.execSQL("INSERT INTO preguntas VALUES(15, '¿Que guerra combatio el Capitan America?', 'Primera Guerra Mundial','Segunda Guerra Mundial','Guerra Fria','Guerra Civil Española','Segunda Guerra Mundial', 'Marvel');");
 
         preguntasBD.close();
     }
 
-    public void preguntasPokemon(View v){
-        String tematica;
-        Intent i=new Intent(this,Preguntas.class);
-        tematica="Pokemon";
-        i.putExtra("Pokemon",tematica);
-        System.out.println("Hola");
-        startActivity(i);
-    }
-
     public void pantallaPreguntas(View v){
-        String tematica;
+        String tematica="";
         Intent i=new Intent(this,Preguntas.class);
-
-        //if(pokemon.){
-        //    tematica=pokemon.getText().toString();
-        //    i.putExtra("Pokemon",tematica);
-        //}
-        if(marvel.callOnClick()){
-            tematica=marvel.getText().toString();
-            i.putExtra("Marvel",tematica);
+        switch(v.getId()){
+            case R.id.btPokemon:
+                i.putExtra("tema","Pokemon");
+                break;
+            case R.id.btMarvel:
+                i.putExtra("tema","Marvel");
+                break;
         }
 
+        startActivity(i);
 
     }
 
-        }
+}
+
+
+
+
+
 
 
