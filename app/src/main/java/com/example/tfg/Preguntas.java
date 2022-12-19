@@ -47,6 +47,7 @@ public class Preguntas extends AppCompatActivity {
         botonC=(Button)findViewById(R.id.btC);
         botonD=(Button)findViewById(R.id.btD);
         textoPregunta=(TextView)findViewById(R.id.tvPregunta);
+        musica();
         preguntasBD = new crearBD(this);
         String tematica=getIntent().getStringExtra("tema");
         System.out.print(tematica);
