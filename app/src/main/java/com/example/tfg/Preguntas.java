@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.media.Image;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -36,7 +37,7 @@ public class Preguntas extends AppCompatActivity {
     int aciertos=0;
     crearBD preguntasBD;
     List<ListaPreguntas> lista;
-
+    MediaPlayer mp=new MediaPlayer();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +52,7 @@ public class Preguntas extends AppCompatActivity {
         System.out.print(tematica);
         lista= (ArrayList<ListaPreguntas>) datos(tematica);
         verPregunta();
+
 
 
     }
@@ -114,6 +116,11 @@ public class Preguntas extends AppCompatActivity {
         }else {
             verPregunta();
         }
+    }
+
+    public void musica(){
+        mp= MediaPlayer.create(this,R.raw.mii_channel);
+        mp.start();
     }
 
 }
